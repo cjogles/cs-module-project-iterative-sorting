@@ -1,18 +1,26 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 1):
-        cur_index = i
-        smallest_index = cur_index
-        # TO-DO: find next smallest element
-        # (hint, can do in 3 loc)
-        # Your code here
-
-
-        # TO-DO: swap
-        # Your code here
-
+    # In Place Solution for Selection Sort of ints
+    # first loop through each element in given array argument
+    for i in range(len(arr)):
+        # set your smallest id value
+        smallest = i
+        # next we need to loop through the rest of the  
+        # unsorted array! lets do it
+        for j in range(i + 1, len(arr)):
+            # check if element in array at index j is smaller then 
+            # element in array at index i. 
+            # if so, redefine smallest value as referenced by its
+            # index in the array
+            if arr[j] < arr[smallest]:
+                smallest = j
+            # now that you have the smallest id to reference
+            # the correct element in the array, swap em!
+        arr[i], arr[smallest]= arr[smallest], arr[i]
     return arr
+
+
+selection_sort([9,8,7,6,5,4,3,2,1,0])
 
 
 # TO-DO:  implement the Bubble Sort function below
